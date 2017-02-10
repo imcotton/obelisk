@@ -1,0 +1,41 @@
+
+.container {
+    width: auto;
+    max-width: 980px;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+#user-input {
+    text-align: center;
+
+    & > form {
+        display: inline-block;
+        text-align: left;
+    }
+
+    & .info-input {
+        display: inline-block;
+
+        & .fullname {
+            display: block;
+            text-align: right;
+            padding-right: 0.6em;
+            min-height: 1.5em;
+        }
+
+        &.errored .fullname {
+            visibility: hidden;
+        }
+
+        & .username {
+            width: 238px;
+        }
+    }
+}
