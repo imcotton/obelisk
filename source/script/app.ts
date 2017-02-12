@@ -5,21 +5,9 @@ import * as Rx from 'rxjs';
 
 import { bootWith } from './helper';
 
-import UserInput from './user-input';
-import APIMeter from './api-meter';
 
 
 function main () {
-
-    new APIMeter($('#api-meter'));
-
-    const { hash } = window.location;
-
-    if (hash.length > 1) {
-        console.info(hash);
-    } else {
-        new UserInput($('#user-input'));
-    }
 
 
     /*
