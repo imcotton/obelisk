@@ -35,6 +35,7 @@ dependencies = do ->
 
     [/// \./dist ///g, '']
     [/// \.\./node_modules/ ///g, 'https://unpkg.com/']
+    [/// @time@ ///g, Date.now()]
 ]...
 
 
