@@ -2,4 +2,6 @@
 *.log
 /dist/
 
+/build/gen-data.js
+
 yarn.lock
