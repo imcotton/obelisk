@@ -1,0 +1,119 @@
+
+.container {
+    width: auto;
+    max-width: 760px;
+    padding-right: 20px;
+    padding-left: 20px
+}
+
+.container.fluid {
+    max-width: initial
+}
+
+.container.wide {
+    margin-left: -20px;
+    margin-right: -20px
+}
+
+.hidden {
+    display: none;
+}
+
+ul, ol {
+}
+
+ul.unstyled, ol.unstyled {
+    list-style: none
+}
+
+
+#data-present {
+}
+
+
+#data-present > .header {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: white
+}
+
+
+#data-present > .header .counter {
+    vertical-align: text-top
+}
+
+
+#data-present > [sheet] > [entry] {
+}
+
+
+#data-present > [sheet] > [entry] > [repo] {
+    box-shadow: inset 0px 0px 3px 1px rgba(128, 128, 128, 0.7)
+}
+
+
+#data-present > [sheet] > [entry] > [repo] [info] {
+    color: inherit
+}
+
+
+#data-present > [sheet] > [entry] > [commits-wrapper] {
+    padding-left: 40px
+}
+
+
+#data-present > [sheet] > [entry] > [commits-wrapper]:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    z-index: -1;
+    display: block;
+    width: 3px;
+    content: "";
+    background-color: #E5E5E5
+}
+
+
+#data-present > [sheet] > [entry] > [commits-wrapper] > [commits] > [commit-entry] {
+}
+
+
+#data-present > [sheet] > [entry] > [commits-wrapper] > [commits] > [commit-entry]:first-child {
+    border-top: none !important
+}
+
+
+#data-present > [sheet] > [entry] > [commits-wrapper] > [commits] > [commit-entry]:hover {
+    background-color: white !important
+}
+
+
+#data-present > [sheet] > [entry] > [commits-wrapper] > [commits] > [commit-entry]:hover:before {
+    background-color: gray
+}
+
+
+#data-present > [sheet] > [entry] > [commits-wrapper] > [commits] > [commit-entry]:before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    border-radius: 999px;
+    height: 8px;
+    background-color: white;
+    border: 3px solid lightgray;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: -27px
+}
+
+
+#data-present > [sheet] > [entry] > [commits-wrapper] > [commits] > [commit-entry] > .box {
+}
+
+
+#data-present > [sheet] > [entry] > [commits-wrapper] > [commits] > [commit-entry] > .box .title {
+    max-width: calc(100% - 90px)
+}
