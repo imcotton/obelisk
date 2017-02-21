@@ -1,13 +1,101 @@
 
 .container {
     width: auto;
-    max-width: 980px;
-    padding-right: 1em;
-    padding-left: 1em;
+    max-width: 760px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    &.fluid {
+        max-width: initial;
+    }
+
+    &.wide {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
 }
 
 .hidden {
     display: none;
 }
 
+ul, ol {
+    &.unstyled {
+        list-style: none;
+    }
+}
 
+
+#data-present {
+
+    & > .header {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        color: white;
+
+        & .counter {
+            vertical-align: text-top;
+        }
+    }
+
+    & > [sheet] > [entry] {
+        & > [repo] {
+            box-shadow: inset 0px 0px 3px 1px rgba(128, 128, 128, 0.7);
+
+            & [info] {
+                color: inherit;
+            }
+        }
+
+        & > [commits-wrapper] {
+            padding-left: 40px;
+
+            &:before {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 20px;
+                z-index: -1;
+                display: block;
+                width: 3px;
+                content: "";
+                background-color: #E5E5E5;
+            }
+
+            & > [commits] > [commit-entry] {
+                &:first-child {
+                    border-top: none !important;
+                }
+
+                &:hover {
+                    background-color: white !important;
+
+                    &:before {
+                        background-color: gray;
+                    }
+                }
+
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    width: 8px;
+                    border-radius: 999px;
+                    height: 8px;
+                    background-color: white;
+                    border: 3px solid lightgray;
+                    position: absolute;
+                    margin: auto;
+                    top: 0;
+                    bottom: 0;
+                    left: -27px;
+                }
+
+                & > .box {
+                    & .title {
+                        max-width: calc(100% - 90px);
+                    }
+                }
+            }
+        }
+    }
+}

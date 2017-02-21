@@ -17,10 +17,78 @@
 
 <body>
 
-    <main class="container">
+    <main>
 
-        <section id="data-present" class="hidden">
-            data-present
+        <section id="data-present" class="hidden" data-load="../dist/data.json?t=@time@">
+
+            <header class="header container fluid text-right bg-blue" header-bar>
+                crossing <span class="counter repos" repos>0</span> repos
+                with <span class="counter commits" commits>0</span> commits
+            </header>
+
+            <ul class="list unstyled overflow-hidden" sheet>
+                <li class="item" entry>
+                    <header repo class="header container fluid wide bg-gray markdown-body">
+                        <div class="container position-relative">
+                            <span language class="
+                                counter
+                                text-blue bg-white
+                                border border-blue
+                                position-absolute right-0 top-0 m-2 mr-4
+                            "></span>
+
+                            <h2>
+                                <a href="#" class="text-green" names>
+                                    <small author></small>
+                                    <span class="pl-1 pr-1">&middot;</span>
+                                    <strong project></strong>
+                                </a>
+                            </h2>
+
+                            <p class="text-gray" description></p>
+
+                            <ul class="unstyled text-right" info>
+                                <li class="clearfix d-inline-block">
+                                    <span class="btn btn-outline btn-sm btn-with-count">Star</span>
+                                    <span class="social-count" star></span>
+                                </li>
+
+                                <li class="clearfix d-inline-block">
+                                    <span class="btn btn-outline btn-sm btn-with-count">Fork</span>
+                                    <span class="social-count" fork></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </header>
+
+                    <div class="container clearfix position-relative pt-3 mb-4" commits-wrapper>
+                        <ol class="border unstyled" commits>
+                            <li class="item border-top bg-blue-light position-relative" commit-entry>
+                                <div class="box position-relative p-2 clearfix">
+                                    <div avatar class="avatar-parent-child d-inline-block float-left mr-3">
+                                        <img author class="avatar" width="36" height="36">
+                                        <img committer class="avatar avatar-child" width="16" height="16">
+                                    </div>
+                                    <div>
+                                        <p class="m-0 title css-truncate css-truncate-target">
+                                            <strong title></strong>
+                                        </p>
+                                        <p class="m-0">
+                                            <small><em date></em></small>
+                                        </p>
+                                    </div>
+                                    <a class="link-blue" link>
+                                        <code class="sha1 position-absolute right-0 bottom-0 p-1">
+                                            <u><strong sha></strong></u>
+                                        </code>
+                                    </a>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+
         </section>
 
     </main>

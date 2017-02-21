@@ -6,11 +6,13 @@ import * as Rx from 'rxjs';
 import { bootWith } from './helper';
 
 
+import DataPresent from './data-present';
 
 
 
 function main () {
 
+    new DataPresent($('#data-present'));
 
 }
 

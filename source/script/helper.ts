@@ -67,14 +67,61 @@ export const ajax = new class {
 
         return this.ajax
             .get(url, {...auth})
-            .toPromise()
-            .catch((net: Rx.AjaxError) => {
-                return net;
-            })
-            .then((net: Response) => {
-                return net;
-            })
         ;
     }
 
 }
+
+
+
+export function querys (search = '') {
+    return search
+        .split('&')
+        .map(pair => pair.split('='))
+        .map(([key, value]) => ({[key]: value}))
+        .reduce((hash, item) => ({...hash, ...item}), {});
+}
+
+
+
+export function identity <T> (value: T) {
+    return value;
+}
+
+
+
+export function compare <T> (foo: T, bar: T) {
+
+    if (foo === bar) return 0;
+
+    return foo > bar ? 1 : -1;
+}
+
+
+
+export function setState <T extends Object, K extends keyof T>
+    (target: T, source: Pick<T, K>) {
+
+    for (let key in target) {
+        if (target.hasOwnProperty(key)) {
+            target[key] = source[key];
+        }
+    }
+
+    return target;
+}
+
+
+
+export function pick <T, K extends keyof T>
+    (source: T, ...keys: K[]) {
+
+    const result = {} as Pick<T, K>;
+
+    for (let key of keys) {
+        result[key] = source[key];
+    }
+
+    return result;
+}
+
