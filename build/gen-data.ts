@@ -25,8 +25,8 @@ function load (user = '', token = '') {
 
     let headers = {};
 
-    if (token) {
-        headers['Authorization'] = token;
+    if (/^[a-z0-9]{16,}$/i.test(token)) {
+        headers['Authorization'] = `token ${ token }`;
     }
 
     const getJSON = function <T> (url = '') {
