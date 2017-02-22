@@ -25,7 +25,7 @@ function load (user = '', token = '') {
 
     let headers = {};
 
-    if (token) {
+    if (/^[a-z0-9]{16,}$/i.test(token)) {
         headers['Authorization'] = `token ${ token }`;
     }
 
