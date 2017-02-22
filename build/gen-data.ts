@@ -26,7 +26,7 @@ function load (user = '', token = '') {
     let headers = {};
 
     if (token) {
-        headers['Authorization'] = token;
+        headers['Authorization'] = `token ${ token }`;
     }
 
     const getJSON = function <T> (url = '') {
