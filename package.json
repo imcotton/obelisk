@@ -8,7 +8,7 @@
     "run.js": "rollup -c build/rollup.config.js",
     "run.css": "postcss -c build/postcss.config.js",
     "run.misc": "coffee build/misc.coffee",
-    "run.data": "browserify -p [ tsify -t es6 -m commonjs --lib es2015 --noEmitHelpers --importHelpers ] --no-bundle-external --node -e build/gen-data.ts -o build/gen-data.js && node build/gen-data.js && del build/gen-data.js",
+    "run.data": "browserify -p [ tsify -t es6 -m commonjs --lib es2015 --noEmitHelpers --importHelpers ] --no-bundle-external --node -e build/gen-data.ts | node",
     "run.server": "ecstatic --port $npm_package_config_port",
     "dev": "concurrently -k 'npm run run.server' 'npm run run.ts -- -w' 'npm run run.js -- -w' 'npm run run.css -- -w'",
     "build": "del dist && npm run run.ts -- -t ES5 && npm run run.js ; npm run run.css ; npm run run.misc",
