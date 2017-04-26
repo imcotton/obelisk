@@ -8,8 +8,6 @@ export default {
         require('rollup-plugin-node-resolve')({
             jsnext: true,
             browser: true,
-            skip: [
-            ],
         }),
 
         require('rollup-plugin-inject')({

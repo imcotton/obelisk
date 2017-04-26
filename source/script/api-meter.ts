@@ -18,9 +18,9 @@ export default class APIMeter {
 
         const parse = (xhr: XMLHttpRequest) => {
             this.update(
-                ~~xhr.getResponseHeader('X-RateLimit-Remaining'),
-                ~~xhr.getResponseHeader('X-RateLimit-Limit'),
-                ~~xhr.getResponseHeader('X-RateLimit-Reset') * 1000,
+                ~~Number(xhr.getResponseHeader('X-RateLimit-Remaining')),
+                ~~Number(xhr.getResponseHeader('X-RateLimit-Limit')),
+                ~~Number(xhr.getResponseHeader('X-RateLimit-Reset')) * 1000,
             );
         };
 

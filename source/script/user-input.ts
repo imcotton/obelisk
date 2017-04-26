@@ -61,7 +61,7 @@ export default class UserInput {
 */
             .do(({xhr}) => {
                 this.$node.find('.counter').text(
-                    ~~xhr.getResponseHeader('X-RateLimit-Remaining')
+                    ~~Number(xhr.getResponseHeader('X-RateLimit-Remaining'))
                 );
             })
 
