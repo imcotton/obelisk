@@ -38,7 +38,7 @@ function load (user = '', token = '') {
     };
 
     const urls = {
-        repos: `https://api.github.com/users/${ user }/repos`,
+        repos: `https://api.github.com/users/${ user }/repos?per_page=100`,
     };
 
     const repos$ = Rx.Observable
