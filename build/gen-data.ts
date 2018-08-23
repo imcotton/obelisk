@@ -2,6 +2,8 @@
 import * as file from 'fs';
 
 import * as Rx from 'rxjs';
+import { noop } from 'rxjs/util/noop';
+
 import fetch from 'node-fetch';
 
 import { GitHub } from '../source/script/github';
@@ -17,7 +19,7 @@ const {
 
 
 load(login, token).toArray().subscribe(data => {
-    file.writeFile('./dist/data.json', JSON.stringify(data));
+    file.writeFile('./dist/data.json', JSON.stringify(data), noop);
 });
 
 
