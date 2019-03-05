@@ -6,8 +6,8 @@
   "scripts": {
     "run.ts": "tsc -p source --rootDir source",
     "run.js": "rollup -c build/rollup.config.js",
-    "run.js.min": "google-closure-compiler-js --languageIn=ES5 --no-rewritePolyfills --assumeFunctionWrapper -- dist/script/bundle.js > dist/script/bundle.min.js",
-    "run.css": "postcss source/style/*.css -d dist/style -c build/postcss.config.js",
+    "run.js.min": "google-closure-compiler --language_in=ES5 --rewrite_polyfills=false --assume_function_wrapper dist/script/bundle.js > dist/script/bundle.min.js",
+    "run.css": "postcss source/style/*.css -d dist/style --config build/postcss.config.js",
     "run.misc": "coffee build/misc.coffee",
     "run.data": "browserify -p [ tsify -t ES6 -m commonjs --noEmitHelpers --importHelpers --skipDefaultLibCheck ] --no-bundle-external --node -e build/gen-data.ts | node",
     "run.server": "ecstatic --port $npm_package_config_port",
