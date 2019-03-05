@@ -4,9 +4,8 @@ module.exports = {
         require('autoprefixer')({
             browsers: [
                 'last 2 versions',
-                'ie >= 9',
-                'iOS >= 8',
-                'Safari >= 8',
+                'iOS >= 10',
+                'Safari >= 10',
             ],
         }),
 
