@@ -1,10 +1,7 @@
 
-import * as Rx from 'rxjs';
-
-
 import { GitHub } from './github';
 
-import { ajax, compare } from './helper';
+import { compare } from './helper';
 
 
 
@@ -30,9 +27,11 @@ export default class DataPresent {
             commits: GitHub.Commits
         };
 
-        Rx.Observable.ajax(url)
-            .flatMap(net => net.response as Item[])
-            .subscribe(({repo, commits}) => this.append(repo, commits))
+        fetch(url)
+            .then(data => data.json() as Promise<Item[]>)
+            .then(list => {
+                list.forEach(({repo, commits}) => this.append(repo, commits));
+            })
         ;
     }
 

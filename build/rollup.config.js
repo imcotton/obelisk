@@ -1,10 +1,20 @@
 
 export default {
-    entry: 'dist/script/app.js',
-    dest: 'dist/script/bundle.js',
-    format: 'iife',
+    input: 'dist/script/app.js',
+    output: {
+        file: 'dist/script/bundle.js',
+        format: 'iife',
+        name: 'main',
+        globals: {
+            window: 'window',
+            jquery: 'null',
+        },
+    },
     context: 'window',
     plugins: [
+
+        require('rollup-plugin-commonjs')(),
+
         require('rollup-plugin-node-resolve')({
             jsnext: true,
             browser: true,
@@ -34,11 +44,5 @@ export default {
     external: [
         'window',
         'jquery',
-        'rxjs',
     ],
-    globals: {
-        window: 'window',
-        jquery: 'null',
-        rxjs: 'null',
-    },
 };
