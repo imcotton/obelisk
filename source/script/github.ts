@@ -1,5 +1,5 @@
 
-import { setState } from './helper';
+import { pick } from './helper';
 
 
 
@@ -70,23 +70,22 @@ export namespace GitHub {
         }
 
         const pickUser = (name: 'author' | 'committer', info: Info) => {
-            const pesudo = <UserOrg>{
-                id: 0,
-                login: '',
-                fullname: '',
-                avatar_url: '',
-            };
 
-            let user = raw[name] as UserOrg;
-                user.fullname = info[name].name;
+            const user = raw[name] as UserOrg;
 
-            return setState(pesudo, user);
+            if (user == null) {
+                return;
+            }
+
+            user.fullname = info[name].name;
+
+            return pick(user, 'id', 'login', 'fullname', 'avatar_url');
         };
 
         const info = raw['commit'] as Info;
 
         const author = pickUser('author', info);
-        const committer = pickUser('committer', info);
+        const committer = pickUser('committer', info) || author;
 
         let commit = <CommitOrg>{};
             commit.title = info.message;
