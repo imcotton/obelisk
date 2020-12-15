@@ -36,7 +36,7 @@
     "copyfiles": "^2.1.0",
     "core-js": "^2.6.5",
     "del-cli": "^1.1.0",
-    "ecstatic": "^3.3.1",
+    "ecstatic": "^4.1.4",
     "google-closure-compiler": "^20190215.0.2",
     "jquery": "^3.3.1",
     "lodash.zip": "^4.2.0",
@@ -53,7 +53,7 @@
     "rollup-plugin-node-resolve": "^4.0.1",
     "rxjs": "^6.4.0",
     "tsify": "^4.0.1",
-    "tslib": "^1.9.2",
-    "typescript": "^3.3.3333"
+    "tslib": "~1.9.2",
+    "typescript": "~3.3.3333"
   }
 }
